@@ -1,2 +1,4 @@
 # Alve-robot
-ROS2 &amp; Gazebo Simulator: Industrial Storage Pick-and-Place System A capstone project for my Industrial Computer Engineering degree at ENET'Com, simulating automated pick-and-place operations in an industrial warehouse.
+This repository contains the capstone project for my Industrial Computer Engineer degree at The National School of Electronics and Telecommunications of Sfax (ENET'Com).
+
+It implements a fully simulated system in Gazebo, controlled by ROS2 nodes, to automate pick-and-place tasks within a modeled industrial storage environment.
