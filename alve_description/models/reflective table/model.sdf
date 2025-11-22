@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="Reflective table">
+        <static>true</static>
+        <link name="link">
+            <pose>0 0 0 0 3.14 0</pose>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <scale>0.6 0.6 0.6</scale>
+                        <uri>meshes/Table.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <scale>0.6 0.6 0.6</scale>
+                        <uri>meshes/Table.dae</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <diffuse>1.0 1.0 1.0</diffuse>
+                    <specular>1.0 1.0 1.0</specular>
+                    <pbr>
+                        <metal>
+                            <albedo_map>materials/textures/Table_Table_BaseColor.png</albedo_map>
+                            <normal_map>materials/textures/Table_Table_Normal.png</normal_map>
+                            <roughness_map>materials/textures/Table_Roughness.png</roughness_map>
+                            <environment_map>materials/textures/DepotEnvMap.dds</environment_map>
+                            <metalness>0.1</metalness>
+                        </metal>
+                    </pbr>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

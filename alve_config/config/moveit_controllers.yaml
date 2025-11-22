@@ -1,0 +1,90 @@
+# MoveIt uses this configuration for controller management
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - arm_right_controller
+    - arm_left_controller
+    - hand_right_controller
+    - hand_left_controller
+    - neck_controller
+    - both_arms_controller
+
+  both_arms_controller:
+    type: FollowJointTrajectory
+    joints:
+      - L_joint_1
+      - L_joint_2
+      - L_joint_3
+      - L_joint_4
+      - L_joint_5
+      - L_joint_6
+      - L_joint_7
+      - R_joint_1
+      - R_joint_2
+      - R_joint_3
+      - R_joint_4
+      - R_joint_5
+      - R_joint_6
+      - R_joint_7
+    action_ns: follow_joint_trajectory
+    default: true
+
+  arm_right_controller:
+    type: FollowJointTrajectory
+    joints:
+      - R_joint_1
+      - R_joint_2
+      - R_joint_3
+      - R_joint_4
+      - R_joint_5
+      - R_joint_6
+      - R_joint_7
+    action_ns: follow_joint_trajectory
+    default: true
+
+  arm_left_controller:
+    type: FollowJointTrajectory
+    joints:
+      - L_joint_1
+      - L_joint_2
+      - L_joint_3
+      - L_joint_4
+      - L_joint_5
+      - L_joint_6
+      - L_joint_7
+    action_ns: follow_joint_trajectory
+    default: true
+
+  hand_right_controller:
+    type: FollowJointTrajectory
+    joints:
+      - R_finger_1_
+      - R_finger_2_
+      - R_finger_3_
+      - R_finger_4_
+      - R_thumb_joint_1
+      - R_thumb_joint_2
+    action_ns: follow_joint_trajectory
+    default: true
+
+  hand_left_controller:
+    type: FollowJointTrajectory
+    joints:
+      - L_finger_1_
+      - L_finger_2_
+      - L_finger_3_
+      - L_finger_4_
+      - L_thumb_joint_1
+      - L_thumb_joint_2
+    action_ns: follow_joint_trajectory
+    default: true
+
+  neck_controller:
+    type: FollowJointTrajectory
+    joints:
+      - neck_vertical_joint
+      - neck_horizontal_joint
+    action_ns: follow_joint_trajectory
+    default: true

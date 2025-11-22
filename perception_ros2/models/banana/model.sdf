@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='banana'>
+    <link name='link_1'>
+         <visual name='visual'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://banana/meshes/banana_hd.dae</uri>            
+            <scale>0.8 0.8 0.8</scale>
+          </mesh>
+        </geometry>
+        <cast_shadows>0</cast_shadows>
+        <transparency>0</transparency>
+      </visual>
+            <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://banana/meshes/banana_hd.dae</uri>            
+            <scale>0.8 0.8 0.8</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+    </link>
+
+    <static>1</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>

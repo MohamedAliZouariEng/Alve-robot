@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="black_line_track">
+    <static>true</static>
+    <link name="track_link">
+      <!-- Main outer loop -->
+     
+
+
+      <visual name="vertical_1_safety_yellow">
+        <pose>0 6.5 0.01 0 0 1.5708</pose>
+        <geometry>
+          <box><size>6.0 1 0.001</size></box> <!-- Final vertical closure -->
+        </geometry>
+        <material>
+          <ambient>0.8 0.6 0.1 1</ambient>
+          <diffuse>0.8 0.6 0.1 1</diffuse>
+        </material>
+      </visual>
+      <!--
+      <visual name="vertical_2_red">
+        <pose>3 13.2 0.01 0 0 0</pose>
+        <geometry>
+          <box><size>6 1 0.001</size></box>  Final vertical closure 
+        </geometry>
+        <material><ambient>1 0 0 1</ambient>
+        <diffuse>1 0 0 1</diffuse></material>
+      </visual>
+      -->
+
+      <visual name="vertical_1_white">
+        <pose>-1 6.5 0.01 0 0 1.5708</pose>
+        <geometry>
+          <box><size>6.0 1 0.001</size></box> <!-- Final vertical closure -->
+        </geometry>
+        <material>
+          <ambient>0.95 0.95 0.95 1</ambient>
+          <diffuse>0.95 0.95 0.95 1</diffuse>
+        </material>
+      </visual>
+
+<!--
+      <visual name="vertical_2_blue">
+        <pose>-2 13.2 0.01 0 0 0</pose>
+        <geometry>
+          <box><size>3 1 0.001</size></box>  Final vertical closure 
+        </geometry>
+        <material><ambient>0 0 1 1</ambient>
+        <diffuse>0 0 1 1</diffuse></material>
+      </visual>
+-->
+      <visual name="vertical_1_bright_orange">
+        <pose>1 6.5 0.01 0 0 1.5708</pose>
+        <geometry>
+          <box><size>6.0 1 0.001</size></box> <!-- Final vertical closure -->
+        </geometry>
+        <material>
+          <ambient>1.0 0.4 0.1 1</ambient>
+          <diffuse>1.0 0.4 0.1 1</diffuse>
+        </material>
+      </visual>
+<!--
+      <visual name="vertical_2_green">
+        <pose>2.5 9.8 0.01 0 0 0</pose>
+        <geometry>
+          <box><size>2 1 0.001</size></box> Final vertical closure 
+        </geometry>
+        <material><ambient>0 1 0 1</ambient>
+        <diffuse>0 1 0 1</diffuse></material>
+      </visual>
+-->
+      
+      <visual name="circle">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>1.0</radius>  <!-- Half of your original box width (0.8/2) -->
+            <length>0.001</length>    <!-- Same as your original box length -->
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.0 0.4 0.8 1</ambient>
+          <diffuse>0.0 0.4 0.8 1</diffuse>
+        </material>
+      </visual>
+
+
+    </link>
+  </model>
+</sdf>

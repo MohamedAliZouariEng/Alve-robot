@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: alve_description
+    relative_path: urdf/alve.urdf
+  srdf:
+    relative_path: config/alve.srdf
+  package_settings:
+    author_name: mohamed ali zouari
+    author_email: mohamedalizouari.ai@gmail.com
+    generated_timestamp: 1744292167
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

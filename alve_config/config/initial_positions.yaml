@@ -1,0 +1,31 @@
+# Default initial positions for alve's ros2_control fake system
+
+initial_positions:
+  L_finger_1_: 0.0
+  L_finger_2_: 0.0
+  L_finger_3_: 0.0
+  L_finger_4_: 0.0
+  L_joint_1: 0.0
+  L_joint_2: 0.0
+  L_joint_3: 0.0
+  L_joint_4: 0.0
+  L_joint_5: 0.0
+  L_joint_6: 0.0
+  L_joint_7: 0.0
+  L_thumb_joint_1: 0.0
+  L_thumb_joint_2: 0.0
+  R_finger_1_: 0.0
+  R_finger_2_: 0.0
+  R_finger_3_: 0.0
+  R_finger_4_: 0.0
+  R_joint_1: 0.0
+  R_joint_2: 0.0
+  R_joint_3: 0.0
+  R_joint_4: 0.0
+  R_joint_5: 0.0
+  R_joint_6: 0.0
+  R_joint_7: 0.0
+  R_thumb_joint_1: 0.0
+  R_thumb_joint_2: 0.0
+  neck_horizontal_joint: 0.0
+  neck_vertical_joint: 0.0

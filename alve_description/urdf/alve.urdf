@@ -1,0 +1,3841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="alve">
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0 0.0 -0.5"
+        rpy="0 0 0" />
+      <mass
+        value="50.0" />
+      <inertia
+      ixx="0.5" ixy="0" ixz="0"
+      iyy="0.5" iyz="0"
+      izz="0.3"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+           rgba="0.75 0.75 0.78 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+  <link
+    name="neck_vertical">
+    <inertial>
+      <origin
+        xyz="0.0246716950867426 -2.26860701661471E-06 -2.32175423053871E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.234587352788509" />
+      <inertia
+        ixx="0.000213642247687498"
+        ixy="5.45643635062777E-11"
+        ixz="2.41277691702152E-10"
+        iyy="0.000159351862503322"
+        iyz="8.96995077764116E-11"
+        izz="0.000186614748910511" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/neck_vertical.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/neck_vertical.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+  <joint
+    name="neck_vertical_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0822614432472001 0.387604463509509"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="neck_vertical" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="200"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="neck_horizontal">
+    <inertial>
+      <origin
+        xyz="0.102602771660111 -0.064509915760333 0.0147957003461169"
+        rpy="0 0 0" />
+      <mass
+        value="0.202551361107597" />
+      <inertia
+        ixx="0.000488997713358799"
+        ixy="1.03061328434139E-06"
+        ixz="3.2197831126565E-05"
+        iyy="0.000479329204830767"
+        iyz="1.52247519986514E-07"
+        izz="0.000460610895427736" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/neck_horizontal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/neck_horizontal.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+  <joint
+    name="neck_horizontal_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0634825510436254 0"
+      rpy="3.14159265358979 0.0836690525586614 0" />
+    <parent
+      link="neck_vertical" />
+    <child
+      link="neck_horizontal" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.48"
+      upper="0.333"
+      effort="200"
+      velocity="10" />
+  </joint>
+
+
+
+
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0.000159355137582976 0.00685634631384463 0.075955003489943"
+        rpy="0 0 0" />
+      <mass
+        value="0.107910425600982" />
+      <inertia
+        ixx="7.71002104469911E-06"
+        ixy="2.48673597151535E-10"
+        ixz="-1.78483697340727E-08"
+        iyy="7.02567347639234E-05"
+        iyz="4.92976742868614E-08"
+        izz="7.12550242016738E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.007"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.007"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/camera.STL" />
+      </geometry>
+    </collision>
+
+  </link>
+
+
+
+
+  <joint
+    name="camera_"
+    type="fixed">
+    <origin
+      xyz="0.141189677165878 -0.064480290652953 0"
+      rpy="-0.0836690525586628 0 -1.5707963267949" />
+    <parent
+      link="neck_horizontal" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+
+
+
+  <joint name="cam_1_depth_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="camera"/>
+      <child link="cam_1_depth_frame" />
+    </joint>
+    <link name="cam_1_depth_frame"/>
+
+    <joint name="cam_1_depth_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57" />
+      <parent link="cam_1_depth_frame" />
+      <child link="cam_1_depth_optical_frame" />
+    </joint>
+    <link name="cam_1_depth_optical_frame"/>
+
+    <joint name="cam_1_infra1_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="camera" />
+      <child link="cam_1_infra1_frame" />
+    </joint>
+    <link name="cam_1_infra1_frame"/>
+
+    <joint name="cam_1_infra1_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57" />
+      <parent link="cam_1_infra1_frame" />
+      <child link="cam_1_infra1_optical_frame" />
+    </joint>
+    <link name="cam_1_infra1_optical_frame"/>
+
+    <joint name="cam_1_infra2_joint" type="fixed">
+      <origin xyz="0 -0.05 0" rpy="0 0 0" />
+      <parent link="camera" />
+      <child link="cam_1_infra2_frame" />
+    </joint>
+    <link name="cam_1_infra2_frame"/>
+
+    <joint name="cam_1_infra2_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57" />
+      <parent link="cam_1_infra2_frame" />
+      <child link="cam_1_infra2_optical_frame" />
+    </joint>
+    <link name="cam_1_infra2_optical_frame"/>
+
+    <joint name="cam_1_color_joint" type="fixed">
+      <origin xyz="0 0.015 0" rpy="0 0 0" />
+      <parent link="camera" />
+      <child link="cam_1_color_frame" />
+    </joint>
+    <link name="cam_1_color_frame"/>
+
+    <joint name="cam_1_color_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57" />
+      <parent link="cam_1_color_frame" />
+      <child link="cam_1_color_optical_frame" />
+    </joint>
+    <link name="cam_1_color_optical_frame"/>
+
+
+
+
+
+
+
+
+
+  <link
+    name="R_link_1">
+    <inertial>
+      <origin
+        xyz="-0.0014365845514577 -0.0225169134773787 -0.0601467502763824"
+        rpy="0 0 0" />
+      <mass
+        value="0.534341279956706" />
+      <inertia
+        ixx="0.000293548242102509"
+        ixy="6.91556299952761E-06"
+        ixz="8.41286216204095E-08"
+        iyy="0.000387296642287963"
+        iyz="1.08617712784821E-06"
+        izz="0.000290691999170735" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+  <joint
+    name="R_joint_1"
+    type="revolute">
+    <origin
+      xyz="0.159106703437018 0.0779999999999899 0.31600000000104"
+      rpy="1.5707963267949 1.49756919219021 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+
+
+
+
+
+  <link
+    name="R_link_2">
+    <inertial>
+      <origin
+        xyz="-0.0332122917989008 -0.0330255339836914 -0.0823845791247264"
+        rpy="0 0 0" />
+      <mass
+        value="0.53173907876486" />
+      <inertia
+        ixx="0.0007137832153091"
+        ixy="-1.7368988713681E-05"
+        ixz="-2.02265124793028E-05"
+        iyy="0.00045863783843591"
+        iyz="3.2485509629658E-05"
+        izz="0.000662361769560114" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+  <joint
+    name="R_joint_2"
+    type="revolute">
+    <origin
+      xyz="0.00024933002471067 -1.82904273565709E-05 -0.0681838933638064"
+      rpy="-2.95171259079972 -1.20009383450724 2.86501353514808" />
+    <parent
+      link="R_link_1" />
+    <child
+      link="R_link_2" />
+    <axis
+      xyz="-0.0731617091436 -0.997320091202011 0" />
+    <limit
+      lower="-3.14"
+      upper="0.5"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+  <link
+    name="R_link_3">
+    <inertial>
+      <origin
+        xyz="-0.0278042360295373 0.00710276310233346 -0.0770777462471949"
+        rpy="0 0 0" />
+      <mass
+        value="0.226232294910783" />
+      <inertia
+        ixx="0.000117144489291159"
+        ixy="4.30724984039784E-06"
+        ixz="-2.03612816361886E-05"
+        iyy="0.000141449352658454"
+        iyz="-2.98759806836543E-06"
+        izz="7.36430446967417E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_joint_3"
+    type="revolute">
+    <origin
+      xyz="-0.0514291347436227 -0.0300214022862643 -0.128972051899831"
+      rpy="0.358655313159367 -0.44081921881658 1.6346269082499" />
+    <parent
+      link="R_link_2" />
+    <child
+      link="R_link_3" />
+    <axis
+      xyz="0.354805765690842 -0.0260279480476417 0.934577666410323" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="200"
+      velocity="1" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_link_4">
+    <inertial>
+      <origin
+        xyz="0.0404501838289744 -0.0122669150029497 -0.0355791017885642"
+        rpy="0 0 0" />
+      <mass
+        value="0.20818510918487" />
+      <inertia
+        ixx="0.000151557097299857"
+        ixy="1.25355093366258E-05"
+        ixz="-1.02812176853423E-06"
+        iyy="0.00019643645287013"
+        iyz="-2.8502966401093E-06"
+        izz="0.000150137496534148" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_joint_4"
+    type="revolute">
+    <origin
+      xyz="-0.0390878517660381 0.00290663381669187 -0.102455273444911"
+      rpy="-3.0427107055526 0.205936742372903 2.60912725256841" />
+    <parent
+      link="R_link_3" />
+    <child
+      link="R_link_4" />
+    <axis
+      xyz="-0.26727903667441 -0.960718294669643 0.0747146226748994" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_link_5">
+    <inertial>
+      <origin
+        xyz="0.00873010992560026 0.00070855279113316 0.0364628035969315"
+        rpy="0 0 0" />
+      <mass
+        value="0.080489666588919" />
+      <inertia
+        ixx="6.56362313149276E-05"
+        ixy="8.87535706700287E-07"
+        ixz="-2.93902620721297E-06"
+        iyy="3.73574729471789E-05"
+        iyz="4.72176411167861E-06"
+        izz="5.38818320412516E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_joint_5"
+    type="revolute">
+    <origin
+      xyz="0.0668935726804042 -0.0215314198388956 -0.0610120492332321"
+      rpy="-2.9410151541595 1.09910956837781 3.01766431070175" />
+    <parent
+      link="R_link_4" />
+    <child
+      link="R_link_5" />
+    <axis
+      xyz="-0.232840109912335 -0.0344186919532764 -0.971905775710916" />
+    <limit
+      lower="-3.14"
+      upper="1.57"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_link_6">
+    <inertial>
+      <origin
+        xyz="0.00203797946463149 0.00670558081031616 0.0102299277036211"
+        rpy="0 0 0" />
+      <mass
+        value="0.0821447327243417" />
+      <inertia
+        ixx="3.79712316597623E-05"
+        ixy="-6.10888278120203E-08"
+        ixz="-1.30668920625816E-06"
+        iyy="3.81019115773527E-05"
+        iyz="-1.04624450651053E-06"
+        izz="1.18849089414602E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_joint_6"
+    type="revolute">
+    <origin
+      xyz="0.0174203921202825 0.00257510231604266 0.072715047786179"
+      rpy="-0.000999561011674473 0.234847055339217 -0.00847323237113265" />
+    <parent
+      link="R_link_5" />
+    <child
+      link="R_link_6" />
+    <axis
+      xyz="0 0.99937352731304 -0.0353914241856962" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_link_7">
+    <inertial>
+      <origin
+        xyz="-0.0631678503452803 -0.0233356233109024 0.0208374816654513"
+        rpy="0 0 0" />
+      <mass
+        value="0.195716745923344" />
+      <inertia
+        ixx="6.73146237270585E-05"
+        ixy="5.20342056099533E-06"
+        ixz="7.85912416099957E-06"
+        iyy="8.77977231932149E-05"
+        iyz="1.54183924399037E-05"
+        izz="9.50323822083789E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_joint_7"
+    type="revolute">
+    <origin
+      xyz="0 0.0099734 0.044951"
+      rpy="-0.49696 1.1089 2.0475" />
+    <parent
+      link="R_link_6" />
+    <child
+      link="R_link_7" />
+    <axis
+      xyz="-0.20448 -0.58522 -0.78467" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_thumb_link_1">
+    <inertial>
+      <origin
+        xyz="-0.0357613673462028 -0.000955489710608659 0.0105619742548426"
+        rpy="0 0 0" />
+      <mass
+        value="0.0139187168780281" />
+      <inertia
+        ixx="1.82013217674503E-06"
+        ixy="2.05730754747717E-07"
+        ixz="1.70411326031105E-07"
+        iyy="1.05492403424234E-06"
+        iyz="-2.87048917093146E-07"
+        izz="1.93708009420911E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_thumb_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_thumb_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_thumb_joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.0318695378105987 0.00787525336759309 -0.00579189214776415"
+      rpy="-0.238494612230874 -0.0506226824068678 0.115737881836227" />
+    <parent
+      link="R_link_7" />
+    <child
+      link="R_thumb_link_1" />
+    <axis
+      xyz="-0.880627842734678 -0.240030510918005 0.408509432484621" />
+    <limit
+      lower="-1.04"
+      upper="0.7"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_thumb_link_2">
+    <inertial>
+      <origin
+        xyz="-0.0254825009908713 0.00936659436398529 0.00867070322748698"
+        rpy="0 0 0" />
+      <mass
+        value="0.00432454399052546" />
+      <inertia
+        ixx="1.49355270634006E-07"
+        ixy="6.07577631643927E-08"
+        ixz="1.04026780116558E-07"
+        iyy="2.96457369916675E-07"
+        iyz="-3.7480332000851E-08"
+        izz="2.6706883780454E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_thumb_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_thumb_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_thumb_joint_2"
+    type="revolute">
+    <origin
+      xyz="-0.039296071671406 0.0200369610717993 0.0241664611603085"
+      rpy="-0.416241025126665 -0.014343832516934 -0.783445332941499" />
+    <parent
+      link="R_thumb_link_1" />
+    <child
+      link="R_thumb_link_2" />
+    <axis
+      xyz="-0.452307590807512 0.16910119633585 -0.875684091836598" />
+    <limit
+      lower="-1.395"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_finger_1">
+    <inertial>
+      <origin
+        xyz="-0.0309862845163766 0.00971687159468426 -0.0318515538390449"
+        rpy="0 0 0" />
+      <mass
+        value="0.00656771308955239" />
+      <inertia
+        ixx="2.18706836407136E-07"
+        ixy="1.46825747373878E-07"
+        ixz="-4.60581072188257E-08"
+        iyy="2.97116932124721E-07"
+        iyz="4.91172698453741E-08"
+        izz="4.18521467094655E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_finger_1_"
+    type="revolute">
+    <origin
+      xyz="-0.111162524659787 -0.0365955208988565 0.0480389656836335"
+      rpy="-2.01721011556443 1.02398998171059 -0.251332542725686" />
+    <parent
+      link="R_link_7" />
+    <child
+      link="R_finger_1" />
+    <axis
+      xyz="-0.0828803059873624 -0.408072683135254 -0.909179597306404" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_finger_2">
+    <inertial>
+      <origin
+        xyz="-0.0295136495933011 0.0169675939125984 -0.0156970571779764"
+        rpy="0 0 0" />
+      <mass
+        value="0.0065677130895524" />
+      <inertia
+        ixx="2.18706836407136E-07"
+        ixy="1.46825747373878E-07"
+        ixz="-4.60581072188254E-08"
+        iyy="2.97116932124722E-07"
+        iyz="4.91172698453738E-08"
+        izz="4.18521467094655E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_finger_2_"
+    type="revolute">
+    <origin
+      xyz="-0.112543831970004 -0.0340923979864444 0.0465320437958131"
+      rpy="-2.01721011556443 1.02398998171059 -0.251332542725685" />
+    <parent
+      link="R_link_7" />
+    <child
+      link="R_finger_2" />
+    <axis
+      xyz="-0.0828803059873621 -0.408072683135254 -0.909179597306405" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="R_finger_3">
+    <inertial>
+      <origin
+        xyz="-0.0277731631675661 0.0255371202584384 0.00339571436545821"
+        rpy="0 0 0" />
+      <mass
+        value="0.00656771308955239" />
+      <inertia
+        ixx="2.18706836407135E-07"
+        ixy="1.46825747373877E-07"
+        ixz="-4.60581072188252E-08"
+        iyy="2.9711693212472E-07"
+        iyz="4.91172698453734E-08"
+        izz="4.18521467094653E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_finger_3_"
+    type="revolute">
+    <origin
+      xyz="-0.112543831970004 -0.0340923979864444 0.0465320437958131"
+      rpy="-2.01721011556443 1.02398998171059 -0.251332542725685" />
+    <parent
+      link="R_link_7" />
+    <child
+      link="R_finger_3" />
+    <axis
+      xyz="-0.0828803059873621 -0.408072683135254 -0.909179597306405" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+   <link
+    name="R_finger_4">
+    <inertial>
+      <origin
+        xyz="-0.0256766570058024 0.0338177004919194 0.0225820012391118"
+        rpy="0 0 0" />
+      <mass
+        value="0.00656771308955237" />
+      <inertia
+        ixx="2.18706836407134E-07"
+        ixy="1.46825747373877E-07"
+        ixz="-4.60581072188245E-08"
+        iyy="2.9711693212472E-07"
+        iyz="4.91172698453728E-08"
+        izz="4.18521467094653E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/R_finger_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="R_finger_4_"
+    type="revolute">
+    <origin
+      xyz="-0.11254 -0.034092 0.046532"
+      rpy="-2.0172 1.024 -0.25133" />
+    <parent
+      link="R_link_7" />
+    <child
+      link="R_finger_4" />
+    <axis
+      xyz="-0.08288 -0.40807 -0.90918" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+  <link
+    name="L_link_1">
+    <inertial>
+      <origin
+        xyz="-0.00143658455145987 -0.0225169134773749 -0.0601467502763809"
+        rpy="0 0 0" />
+      <mass
+        value="0.534341279956653" />
+      <inertia
+        ixx="0.000293548242102503"
+        ixy="6.91556299953862E-06"
+        ixz="8.4128621610048E-08"
+        iyy="0.000387296642287923"
+        iyz="1.08617712784528E-06"
+        izz="0.000290691999170695" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.159106703437018 0.0779999999999899 0.31599999999896"
+      rpy="-1.5707963267949 -1.49756919223897 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="3.14"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_link_2">
+    <inertial>
+      <origin
+        xyz="-0.0332122917990617 -0.0330255339835311 -0.0823845791239251"
+        rpy="0 0 0" />
+      <mass
+        value="0.531739078794001" />
+      <inertia
+        ixx="0.00071378321535232"
+        ixy="-1.73689887180679E-05"
+        ixz="-2.02265124730541E-05"
+        iyy="0.000458637838462284"
+        iyz="3.24855096274911E-05"
+        izz="0.000662361769583093" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_joint_2"
+    type="revolute">
+    <origin
+      xyz="0.000249330024710726 -1.82904273565987E-05 -0.0681838933638063"
+      rpy="0.189880062790177 1.20009383450723 0.130124849281266" />
+    <parent
+      link="L_link_1" />
+    <child
+      link="L_link_2" />
+    <axis
+      xyz="-0.0731617091436357 -0.997320091202008 0" />
+    <limit
+      lower="-0.5"
+      upper="3.14"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_link_3">
+    <inertial>
+      <origin
+        xyz="-0.0278042360485864 0.0071027631037312 -0.0770777462973712"
+        rpy="0 0 0" />
+      <mass
+        value="0.226232294910784" />
+      <inertia
+        ixx="0.000117144489291159"
+        ixy="4.30724984039787E-06"
+        ixz="-2.03612816361887E-05"
+        iyy="0.000141449352658454"
+        iyz="-2.98759806836542E-06"
+        izz="7.36430446967417E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_joint_3"
+    type="revolute">
+    <origin
+      xyz="-0.0514291347245732 -0.0300214022876617 -0.128972051849655"
+      rpy="-0.386338499182871 -0.23876884343785 -1.24665022963476" />
+    <parent
+      link="L_link_2" />
+    <child
+      link="L_link_3" />
+    <axis
+      xyz="0.354805765741886 -0.0260279476936592 0.934577666400803" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="200"
+      velocity="1" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_link_4">
+    <inertial>
+      <origin
+        xyz="0.0404501816080454 -0.0122669150488745 -0.0355791021593233"
+        rpy="0 0 0" />
+      <mass
+        value="0.20818510141098" />
+      <inertia
+        ixx="0.000151556789292204"
+        ixy="1.25356990547741E-05"
+        ixz="-1.02817436191144E-06"
+        iyy="0.000196436464889165"
+        iyz="-2.85026377454324E-06"
+        izz="0.000150137065045603" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_joint_4"
+    type="revolute">
+    <origin
+      xyz="-0.039087851855086 0.00290663384158762 -0.102455273443341"
+      rpy="-0.161332605765876 -0.492123555284169 0.0801319517182795" />
+    <parent
+      link="L_link_3" />
+    <child
+      link="L_link_4" />
+    <axis
+      xyz="-0.267279036994713 -0.960718294558375 0.0747146229598116" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="10" />z
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_link_5">
+    <inertial>
+      <origin
+        xyz="0.00873010992559995 0.000708552791133132 0.0364628035969308"
+        rpy="0 0 0" />
+      <mass
+        value="0.080489666588919" />
+      <inertia
+        ixx="6.56362313149277E-05"
+        ixy="8.87535706700289E-07"
+        ixz="-2.93902620721287E-06"
+        iyy="3.73574729471789E-05"
+        iyz="4.72176411167874E-06"
+        izz="5.38818320412515E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_joint_5"
+    type="revolute">
+    <origin
+      xyz="0.066893572680405 -0.0215314198388958 -0.0610120492332324"
+      rpy="3.08421815390445 -0.632584017508463 -0.216392786742097" />
+    <parent
+      link="L_link_4" />
+    <child
+      link="L_link_5" />
+    <axis
+      xyz="-0.23284010991224 -0.0344186919986018 -0.971905775709333" />
+    <limit
+      lower="-1.57"
+      upper="3.14"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_link_6">
+    <inertial>
+      <origin
+        xyz="0.00203797946416478 0.00670558081017225 0.0102299277020956"
+        rpy="0 0 0" />
+      <mass
+        value="0.0821447327229096" />
+      <inertia
+        ixx="3.79712316599762E-05"
+        ixy="-6.10888279414212E-08"
+        ixz="-1.306689205964E-06"
+        iyy="3.81019115771307E-05"
+        iyz="-1.04624450664946E-06"
+        izz="1.18849089411323E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_joint_6"
+    type="revolute">
+    <origin
+      xyz="0.0174203921202821 0.00257510231604274 0.0727150477861784"
+      rpy="-0.000999561011676594 0.234847055339213 -0.00847323237113272" />
+    <parent
+      link="L_link_5" />
+    <child
+      link="L_link_6" />
+    <axis
+      xyz="0 0.99937352731304 -0.0353914241857135" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_link_7">
+    <inertial>
+      <origin
+        xyz="-0.0631676058271776 -0.0233356823821187 -0.0208374149259722"
+        rpy="0 0 0" />
+      <mass
+        value="0.195716529966409" />
+      <inertia
+        ixx="6.73141713103456E-05"
+        ixy="5.20312353580869E-06"
+        ixz="-7.85916788295733E-06"
+        iyy="8.77968489061003E-05"
+        iyz="-1.54181153416645E-05"
+        izz="9.50311001697245E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_joint_7"
+    type="revolute">
+    <origin
+      xyz="0 0.00997342715439883 0.0449509237914994"
+      rpy="-2.5799188763486 1.04504954630609 -1.99045517146167" />
+    <parent
+      link="L_link_6" />
+    <child
+      link="L_link_7" />
+    <axis
+      xyz="-0.204481938808014 -0.585222474816706 0.784666675519437" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_thumb_link_1">
+    <inertial>
+      <origin
+        xyz="-0.0357613825526051 -0.000955491145416543 -0.0105619866634721"
+        rpy="0 0 0" />
+      <mass
+        value="0.0139187008820256" />
+      <inertia
+        ixx="1.8201324652355E-06"
+        ixy="2.05730680101079E-07"
+        ixz="-1.70409940817858E-07"
+        iyy="1.05492190500886E-06"
+        iyz="2.87050043597189E-07"
+        izz="1.93707871077862E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_thumb_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_thumb_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_thumb_joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.0318695378229752 0.00787525336422273 0.00579189214202513"
+      rpy="0.238494612230875 0.0506226824068698 0.115737881836226" />
+    <parent
+      link="L_link_7" />
+    <child
+      link="L_thumb_link_1" />
+    <axis
+      xyz="-0.880627842805335 -0.240030510768007 -0.408509432420443" />
+    <limit
+      lower="-0.7"
+      upper="1.04"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_thumb_link_2">
+    <inertial>
+      <origin
+        xyz="-0.0204917145874321 0.00750072346777847 0.0183330624742644"
+        rpy="0 0 0" />
+      <mass
+        value="0.00432454437028291" />
+      <inertia
+        ixx="1.49355128696683E-07"
+        ixy="6.07577942257324E-08"
+        ixz="1.04026678934298E-07"
+        iyy="2.9645733740406E-07"
+        iyz="-3.74802985437535E-08"
+        izz="2.67068895284059E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_thumb_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_thumb_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_thumb_joint_2"
+    type="revolute">
+    <origin
+      xyz="-0.039296071659031 0.0200369610751721 -0.0241664611545681"
+      rpy="0.172898569910701 -0.891179794060387 -1.07454074547424" />
+    <parent
+      link="L_thumb_link_1" />
+    <child
+      link="L_thumb_link_2" />
+    <axis
+      xyz="0.452307591037536 -0.169101196305036 0.875684091723737" />
+    <limit
+      lower="0"
+      upper="1.395"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_finger_1">
+    <inertial>
+      <origin
+        xyz="-0.0265758074284527 0.0314324673292157 0.0165304560360096"
+        rpy="0 0 0" />
+      <mass
+        value="0.00656771308955235" />
+      <inertia
+        ixx="2.18706836407135E-07"
+        ixy="1.46825747373876E-07"
+        ixz="-4.6058107218826E-08"
+        iyy="2.9711693212472E-07"
+        iyz="4.9117269845374E-08"
+        izz="4.18521467094652E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_finger_1_"
+    type="revolute">
+    <origin
+      xyz="-0.110346821617561 -0.0380736894132925 -0.0489288478693004"
+      rpy="3.00064153042885 -0.889724603843004 -0.421674266722523" />
+    <parent
+      link="L_link_7" />
+    <child
+      link="L_finger_1" />
+    <axis
+      xyz="-0.0828803057127962 -0.408072683095998 -0.909179597349053" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_finger_2">
+    <inertial>
+      <origin
+        xyz="-0.0278902680741837 0.0249605380066932 0.00211109806762476"
+        rpy="0 0 0" />
+      <mass
+        value="0.00656771308955236" />
+      <inertia
+        ixx="2.18706836407135E-07"
+        ixy="1.46825747373877E-07"
+        ixz="-4.60581072188262E-08"
+        iyy="2.97116932124721E-07"
+        iyz="4.91172698453745E-08"
+        izz="4.18521467094653E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_finger_2_"
+    type="revolute">
+    <origin
+      xyz="-0.112543831970003 -0.0340923979864445 -0.0465320437958128"
+      rpy="3.00064153042885 -0.889724603843004 -0.421674266722523" />
+    <parent
+      link="L_link_7" />
+    <child
+      link="L_finger_2" />
+    <axis
+      xyz="-0.0828803057127956 -0.408072683095998 -0.909179597349053" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_finger_3">
+    <inertial>
+      <origin
+        xyz="-0.0296307544999187 0.0163910116608533 -0.01698167347581"
+        rpy="0 0 0" />
+      <mass
+        value="0.00656771308955234" />
+      <inertia
+        ixx="2.18706836407133E-07"
+        ixy="1.46825747373875E-07"
+        ixz="-4.60581072188257E-08"
+        iyy="2.97116932124719E-07"
+        iyz="4.91172698453736E-08"
+        izz="4.18521467094651E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_finger_3_"
+    type="revolute">
+    <origin
+      xyz="-0.112543831970003 -0.0340923979864445 -0.0465320437958128"
+      rpy="3.00064153042885 -0.889724603843004 -0.421674266722523" />
+    <parent
+      link="L_link_7" />
+    <child
+      link="L_finger_3" />
+    <axis
+      xyz="-0.0828803057127956 -0.408072683095998 -0.909179597349053" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="L_finger_4">
+    <inertial>
+      <origin
+        xyz="-0.0309862845157755 0.00971687159764206 -0.0318515538324543"
+        rpy="0 0 0" />
+      <mass
+        value="0.00656771308955233" />
+      <inertia
+        ixx="2.18706836407133E-07"
+        ixy="1.46825747373875E-07"
+        ixz="-4.60581072188257E-08"
+        iyy="2.97116932124719E-07"
+        iyz="4.91172698453733E-08"
+        izz="4.1852146709465E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/L_finger_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+  <joint
+    name="L_finger_4_"
+    type="revolute">
+    <origin
+      xyz="-0.114527602615833 -0.0304975268670206 -0.0443678712148775"
+      rpy="3.00064153042885 -0.889724603843001 -0.421674266722524" />
+    <parent
+      link="L_link_7" />
+    <child
+      link="L_finger_4" />
+    <axis
+      xyz="-0.0828803057127983 -0.408072683096001 -0.909179597349052" />
+    <limit
+      lower="-2.09"
+      upper="0"
+      effort="1000"
+      velocity="10" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link
+    name="1st_wheel_link1">
+    <inertial>
+      <origin
+        xyz="-0.0140064571356179 -0.0245765434690279 1.15407330109063E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248265908577677" />
+      <inertia
+        ixx="1.54091479647404E-05"
+        ixy="-4.18572211406827E-06"
+        ixz="-1.09618087994304E-10"
+        iyy="1.4352309128569E-05"
+        iyz="-4.80450709003955E-11"
+        izz="1.56272312965355E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/1st_wheel_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/1st_wheel_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="1st_wheel_joint1"
+    type="fixed">
+    <origin
+      xyz="-0.210000000000001 0.228999999999999 -0.653"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="1st_wheel_link1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link
+    name="1st_wheel_link2">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="9.1"/>
+        <inertia
+          ixx="0.005707" ixy="0" ixz="0"
+          iyy="0.01005" iyz="0"
+          izz="0.005707"/>
+      </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/1st_wheel_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/1st_wheel_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="1st_wheel_joint2"
+    type="continuous">
+    <origin
+      xyz="-0.041 -0.076 -0.021663"
+      rpy="0 0 0" />
+    <parent
+      link="1st_wheel_link1" />
+    <child
+      link="1st_wheel_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link
+    name="2nd_wheel_link1">
+    <inertial>
+      <origin
+        xyz="-0.0140064571356177 -0.0245765434690278 1.15407330164574E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248265908577677" />
+      <inertia
+        ixx="1.54091479647404E-05"
+        ixy="-4.18572211406829E-06"
+        ixz="-1.09618088037913E-10"
+        iyy="1.43523091285689E-05"
+        iyz="-4.80450708915593E-11"
+        izz="1.56272312965355E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/2nd_wheel_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/2nd_wheel_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="2nd_wheel_joint1"
+    type="fixed">
+    <origin
+      xyz="0.209999999999999 0.228999999999999 -0.653"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="2nd_wheel_link1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link
+    name="2nd_wheel_link2">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="9.1"/>
+        <inertia
+          ixx="0.005707" ixy="0" ixz="0"
+          iyy="0.01005" iyz="0"
+          izz="0.005707"/>
+      </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/2nd_wheel_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/2nd_wheel_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="2nd_wheel_joint2"
+    type="continuous">
+    <origin
+      xyz="-0.041 -0.076 -0.021663"
+      rpy="0 0 0" />
+    <parent
+      link="2nd_wheel_link1" />
+    <child
+      link="2nd_wheel_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link
+    name="3rd_wheel_link1">
+    <inertial>
+      <origin
+        xyz="-0.0140064571356179 -0.024576543469028 1.15407329748241E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248265908577673" />
+      <inertia
+        ixx="1.54091479647402E-05"
+        ixy="-4.18572211406828E-06"
+        ixz="-1.09618087994568E-10"
+        iyy="1.43523091285688E-05"
+        iyz="-4.80450709424078E-11"
+        izz="1.56272312965354E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/3rd_wheel_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/3rd_wheel_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="3rd_wheel_joint1"
+    type="fixed">
+    <origin
+      xyz="0.209999999999999 -0.191000000000001 -0.653"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="3rd_wheel_link1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link
+    name="3rd_wheel_link2">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="9.1"/>
+        <inertia
+          ixx="0.005707" ixy="0" ixz="0"
+          iyy="0.01005" iyz="0"
+          izz="0.005707"/>
+      </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/3rd_wheel_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/3rd_wheel_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="3rd_wheel_joint2"
+    type="continuous">
+    <origin
+      xyz="-0.041 -0.076 -0.021663"
+      rpy="0 0 0" />
+    <parent
+      link="3rd_wheel_link1" />
+    <child
+      link="3rd_wheel_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link
+    name="4th_wheel_link1">
+    <inertial>
+      <origin
+        xyz="-0.0140064571356175 -0.0245765434690279 1.15407330414374E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248265908577675" />
+      <inertia
+        ixx="1.54091479647404E-05"
+        ixy="-4.1857221140683E-06"
+        ixz="-1.09618087971909E-10"
+        iyy="1.43523091285689E-05"
+        iyz="-4.80450709077349E-11"
+        izz="1.56272312965356E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/4th_wheel_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/4th_wheel_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="4th_wheel_joint1"
+    type="fixed">
+    <origin
+      xyz="-0.21 -0.191000000000001 -0.653"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="4th_wheel_link1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link
+    name="4th_wheel_link2">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="9.1"/>
+        <inertia
+          ixx="0.005707" ixy="0" ixz="0"
+          iyy="0.01005" iyz="0"
+          izz="0.005707"/>
+      </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/4th_wheel_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alve_description/meshes/4th_wheel_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="4th_wheel_joint2"
+    type="continuous">
+    <origin
+      xyz="-0.041 -0.076 -0.010896"
+      rpy="0 0 0" />
+    <parent
+      link="4th_wheel_link1" />
+    <child
+      link="4th_wheel_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+
+
+
+
+<gazebo reference="1st_wheel_link2">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+      <visual>
+          <material>
+              <ambient>0.2 0.2 0.2 1.0</ambient>
+              <diffuse>0.2 0.2 0.2 1.0</diffuse>
+              <specular>0.2 0.2 0.2 1.0</specular>
+              <emissive>0.0 0.0 0.0 0.0</emissive>
+          </material>
+      </visual>
+  </gazebo>
+<gazebo reference="2nd_wheel_link2">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+      <visual>
+          <material>
+              <ambient>0.2 0.2 0.2 1.0</ambient>
+              <diffuse>0.2 0.2 0.2 1.0</diffuse>
+              <specular>0.2 0.2 0.2 1.0</specular>
+              <emissive>0.0 0.0 0.0 0.0</emissive>
+          </material>
+      </visual>
+  </gazebo>
+<gazebo reference="3rd_wheel_link2">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+      <visual>
+          <material>
+              <ambient>0.2 0.2 0.2 1.0</ambient>
+              <diffuse>0.2 0.2 0.2 1.0</diffuse>
+              <specular>0.2 0.2 0.2 1.0</specular>
+              <emissive>0.0 0.0 0.0 0.0</emissive>
+          </material>
+      </visual>
+  </gazebo>
+<gazebo reference="4th_wheel_link2">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+      <visual>
+          <material>
+              <ambient>0.2 0.2 0.2 1.0</ambient>
+              <diffuse>0.2 0.2 0.2 1.0</diffuse>
+              <specular>0.2 0.2 0.2 1.0</specular>
+              <emissive>0.0 0.0 0.0 0.0</emissive>
+          </material>
+      </visual>
+  </gazebo>
+
+
+<!--
+  <gazebo reference="......">
+      <sensor name="....." type="imu">
+          <topic>imu/data</topic>
+          <update_rate>15.0</update_rate>
+          <always_on>true</always_on>
+          <visualize>false</visualize>
+          <gz_frame_id>.....</gz_frame_id>
+      </sensor>
+  </gazebo>
+-->
+  <gazebo>
+      <plugin
+          filename="gz-sim-velocity-control-system"
+          name="gz::sim::systems::VelocityControl">
+          <topic>mecanum_drive_controller/cmd_vel</topic>
+          <initial_linear>0 0 0</initial_linear>
+          <initial_angular>0 0 0</initial_angular>
+      </plugin>
+  </gazebo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ros2_control name="GazeboSimSystem" type="system">
+    
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+
+    <joint name="1st_wheel_joint2">
+        <command_interface name="velocity">
+            <param name="min">-50.0</param>
+            <param name="max">50.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="2nd_wheel_joint2">
+        <command_interface name="velocity">
+            <param name="min">-50.0</param>
+            <param name="max">50.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="3rd_wheel_joint2">
+        <command_interface name="velocity">
+            <param name="min">-50.0</param>
+            <param name="max">50.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="4th_wheel_joint2">
+        <command_interface name="velocity">
+            <param name="min">-50.0</param>
+            <param name="max">50.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="neck_vertical_joint">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+
+    <joint name="neck_horizontal_joint">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+
+
+    <joint name="R_joint_1">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_joint_2">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_joint_3">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_joint_4">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position">
+        <!--<param name="initial_value">1.56</param>-->
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_joint_5">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_joint_6">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_joint_7">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_thumb_joint_1">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.56</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_thumb_joint_2">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_finger_1_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_finger_2_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_finger_3_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="R_finger_4_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+    
+    
+    
+
+    <joint name="L_joint_1">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_joint_2">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_joint_3">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_joint_4">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position">
+        <!--<param name="initial_value">-1.56</param>-->
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_joint_5">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_joint_6">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_joint_7">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_thumb_joint_1">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">-0.56</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_thumb_joint_2">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_finger_1_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_finger_2_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_finger_3_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="L_finger_4_">
+      <command_interface name="position">
+        <param name="min">-6.28</param>
+        <param name="max">6.28</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+
+    
+  </ros2_control>
+
+
+  <!-- Gazebo's ros2_control plugin -->
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <robot_sim_type>gazebo_ros2_control/GazeboSimSystem</robot_sim_type>
+      <parameters>$(find alve_config)/config/ros2_controllers.yaml</parameters>
+      <ros>
+          <remapping>/controller_manager/robot_description:=/robot_description</remapping>
+      </ros>
+    </plugin>
+
+    <plugin
+        filename="gz-sim-joint-state-publisher-system"
+        name="gz::sim::systems::JointStatePublisher">
+    </plugin>
+
+    <plugin
+        filename="gz-sim-pose-publisher-system"
+        name="gz::sim::systems::PosePublisher">
+        <publish_link_pose>true</publish_link_pose>
+        <use_pose_vector_msg>true</use_pose_vector_msg>
+        <publish_nested_model_pose>true</publish_nested_model_pose>
+    </plugin>
+  </gazebo>
+
+
+
+
+  <gazebo reference="camera">
+    <sensor name="camera" type="rgbd_camera">
+      <pose>-0.0 0.0 0.07 -1.57 -1.5 0</pose>
+          <camera>  
+            <horizontal_fov>1.3962634</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>400</width>
+              <height>400</height>
+            </image>
+            <clip>
+              <near>0.2</near>
+              <far>30.0</far>
+            </clip> 
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          <topic>camera</topic>
+          <gz_frame_id>camera</gz_frame_id>
+          <enable_metrics>true</enable_metrics>
+    </sensor>
+  </gazebo>
+
+    <gazebo reference="camera">
+    <sensor name="camera_two" type="rgbd_camera">
+      <pose>-0.0 0.0 0.07 -1.57 -1.5 0</pose>
+          <camera>  
+            <horizontal_fov>1.3962634</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>1280</width>
+              <height>720</height>
+            </image>
+            <clip>
+              <near>0.2</near>
+              <far>30.0</far>
+            </clip> 
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          <topic>camera_two</topic>
+          <gz_frame_id>camera</gz_frame_id>
+          <enable_metrics>true</enable_metrics>
+    </sensor>
+    <visual>
+      <material> <!-- Black -->
+        <ambient>0.05 0.05 0.05 1.0</ambient>
+        <diffuse>0.08 0.08 0.08 1.0</diffuse>
+        <specular>0.15 0.15 0.15 0.7</specular>
+        <emissive>0.0 0.0 0.0 1.0</emissive>
+      </material>
+    </visual>
+  </gazebo>
+
+  
+
+ 
+
+<gazebo reference="L_link_7">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="R_link_7">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="R_finger_1">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="R_finger_2">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="R_finger_3">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="R_finger_4">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="R_thumb_link_1">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="R_thumb_link_2">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="L_finger_1">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="L_finger_2">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="L_finger_3">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="L_finger_4">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="L_thumb_link_1">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+<gazebo reference="L_thumb_link_2">
+  
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <mu1>2.5</mu1>
+  <mu2>2.5</mu2>
+  <surface>
+    <friction>
+      <ode>
+        <mu>2.5</mu>
+        <mu2>2.5</mu2>
+        <slip1>0.0</slip1>
+        <slip2>0.0</slip2>
+      </ode>
+    </friction>
+    <bounce>
+      <restitution_coefficient>0.0</restitution_coefficient>
+    </bounce>
+  </surface>
+</gazebo>
+
+</robot>

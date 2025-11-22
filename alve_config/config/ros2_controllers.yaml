@@ -1,0 +1,197 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 50  # Hz
+
+    mecanum_drive_controller:
+     type: mecanum_drive_controller/MecanumDriveController
+
+    both_arms_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    # arm_right_controller:
+    #   type: joint_trajectory_controller/JointTrajectoryController
+
+
+    # arm_left_controller:
+    #   type: joint_trajectory_controller/JointTrajectoryController
+
+
+    hand_right_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    hand_left_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    neck_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+mecanum_drive_controller:
+ ros__parameters:
+   # Joint names
+   front_left_joint_name: 4th_wheel_joint2
+   front_right_joint_name: 3rd_wheel_joint2
+   back_left_joint_name: 1st_wheel_joint2
+   back_right_joint_name: 2nd_wheel_joint2
+
+   # Robot physical parameters
+   #WHEEL WIDTH 0.031
+   wheel_base: 0.16
+   wheel_separation: 0.169
+   wheel_radius: 0.047
+   wheel_separation_multiplier: 1.0
+   front_left_wheel_radius_multiplier: 1.0
+   front_right_wheel_radius_multiplier: 1.0
+   back_left_wheel_radius_multiplier: 1.0
+   back_right_wheel_radius_multiplier: 1.0
+
+   # TF configuration
+   tf_frame_prefix_enable: false
+   tf_frame_prefix: ""
+   odom_frame_id: odom
+   base_frame_id: base_footprint
+
+   # Odometry parameters
+   pose_covariance_diagonal: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+   twist_covariance_diagonal: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+   position_feedback: true
+   open_loop: false
+   enable_odom_tf: true
+
+   # Command handling
+   cmd_vel_timeout: 0.5
+   publish_limited_velocity: false
+   velocity_rolling_window_size: 10
+   publish_rate: 50.0
+
+   # Velocity limits
+   linear.x.has_velocity_limits: false
+   linear.x.has_acceleration_limits: false
+   linear.x.has_jerk_limits: false
+   linear.x.max_velocity: 0.0
+   linear.x.min_velocity: 0.0
+   linear.x.max_acceleration: 0.0
+   linear.x.max_jerk: 0.0
+   linear.x.min_jerk: 0.0
+   linear.y.has_velocity_limits: false
+   linear.y.has_acceleration_limits: false
+   linear.y.has_jerk_limits: false
+   linear.y.max_velocity: 0.0
+   linear.y.min_velocity: 0.0
+   linear.y.max_acceleration: 0.0
+   linear.y.max_jerk: 0.0
+   linear.y.min_jerk: 0.0
+   angular.z.has_velocity_limits: false
+   angular.z.has_acceleration_limits: false
+   angular.z.has_jerk_limits: false
+   angular.z.max_velocity: 0.0
+   angular.z.min_velocity: 0.0
+   angular.z.max_acceleration: 0.0
+   angular.z.min_acceleration: 0.0
+   angular.z.max_jerk: 0.0
+   angular.z.min_jerk: 0.0
+
+both_arms_controller:
+  ros__parameters:
+    joints:
+      - L_joint_1
+      - L_joint_2
+      - L_joint_3
+      - L_joint_4
+      - L_joint_5
+      - L_joint_6
+      - L_joint_7
+      - R_joint_1
+      - R_joint_2
+      - R_joint_3
+      - R_joint_4
+      - R_joint_5
+      - R_joint_6
+      - R_joint_7
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    initial_positions: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    allow_nonzero_velocity_at_trajectory_end: true
+    
+# arm_right_controller:
+#   ros__parameters:
+#     joints:
+#       - R_joint_1
+#       - R_joint_2
+#       - R_joint_3
+#       - R_joint_4
+#       - R_joint_5
+#       - R_joint_6
+#       - R_joint_7
+#     command_interfaces:
+#       - position
+#     state_interfaces:
+#       - position
+#       - velocity
+#     allow_nonzero_velocity_at_trajectory_end: true
+# arm_left_controller:
+#   ros__parameters:
+#     joints:
+#       - L_joint_1
+#       - L_joint_2
+#       - L_joint_3
+#       - L_joint_4
+#       - L_joint_5
+#       - L_joint_6
+#       - L_joint_7
+#     command_interfaces:
+#       - position
+#     state_interfaces:
+#       - position
+#       - velocity
+#     allow_nonzero_velocity_at_trajectory_end: true
+hand_right_controller:
+  ros__parameters:
+    joints:
+      - R_finger_1_
+      - R_finger_2_
+      - R_finger_3_
+      - R_finger_4_
+      - R_thumb_joint_1
+      - R_thumb_joint_2
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_nonzero_velocity_at_trajectory_end: true
+hand_left_controller:
+  ros__parameters:
+    joints:
+      - L_finger_1_
+      - L_finger_2_
+      - L_finger_3_
+      - L_finger_4_
+      - L_thumb_joint_1
+      - L_thumb_joint_2
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_nonzero_velocity_at_trajectory_end: true
+neck_controller:
+  ros__parameters:
+    joints:
+      - neck_vertical_joint
+      - neck_horizontal_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_nonzero_velocity_at_trajectory_end: true
