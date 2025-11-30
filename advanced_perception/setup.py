@@ -1,5 +1,8 @@
 from setuptools import find_packages, setup
+from pathlib import Path
 
+home_dir = Path.home()
+venv_path = home_dir / 'ros2_venv' / 'bin' / 'python3'
 package_name = 'advanced_perception'
 
 setup(
@@ -24,5 +27,10 @@ setup(
             'yolo_segmentation = advanced_perception.yolo_segmentation:main',
             'fruit_mask_saver = advanced_perception.fruit_mask_saver:main',
         ],
+    },
+    options={
+        'build_scripts': {
+            'executable': str(venv_path),
+        },
     },
 )

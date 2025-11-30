@@ -7,6 +7,7 @@ from std_msgs.msg import String
 from cv_bridge import CvBridge
 from custom_msgs.msg import InferenceResult, Yolov12Inference
 import os
+from pathlib import Path
 
 bridge = CvBridge()
 
@@ -15,7 +16,8 @@ class YoloObjectDetection(Node):
         super().__init__('object_detection')
 
         # Load a pre-trained YOLOv12 object detection model
-        self.model = YOLO('/home/ubuntu24/ros2_ws/src/advanced_perception/data/yolo12n.pt') 
+        #self.model = YOLO('/home/ubuntu24/ros2_ws/src/advanced_perception/data/yolo12n.pt') 
+        self.model = YOLO(Path.home() / 'ros2_ws' / 'src' / 'advanced_perception' / 'data' / 'yolo12n.pt')
         self.yolov12_inference = Yolov12Inference()
         
         # Set of target classes to detect
@@ -62,7 +64,8 @@ class YoloObjectDetection(Node):
 
     def save_to_file(self) -> None:
         """Save the detected object to data.txt file"""
-        file_path = '/home/ubuntu24/ros2_ws/src/advanced_perception/data/data.txt'  # Your desired path
+        #file_path = '/home/ubuntu24/ros2_ws/src/advanced_perception/data/data.txt'  # Your desired path
+        file_path = Path.home() / 'ros2_ws' / 'src' / 'advanced_perception' / 'data' / 'data.txt'
         try:
             # Create directory if it doesn't exist
             os.makedirs(os.path.dirname(file_path), exist_ok=True)

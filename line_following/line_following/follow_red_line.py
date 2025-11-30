@@ -48,7 +48,9 @@ class LineFollower(Node):
         }
         
         # File path for reading object data
-        self.data_file_path = '/home/ubuntu24/ros2_ws/src/advanced_perception/data/data.txt'
+        #self.data_file_path = '/home/ubuntu24/ros2_ws/src/advanced_perception/data/data.txt'
+        from pathlib import Path
+        self.data_file_path = Path.home() / 'ros2_ws' / 'src' / 'advanced_perception' / 'data' / 'data.txt'
         
         # Timer to periodically check the data file
         self.timer = self.create_timer(1.0, self.check_data_file)  # Check every 1 second

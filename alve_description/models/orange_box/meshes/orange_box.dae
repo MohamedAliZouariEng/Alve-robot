@@ -140,7 +140,7 @@
   </library_lights>
   <library_images>
     <image id="CardboardBoxes_png">
-      <init_from>/home/ubuntu24/ros2_ws/src/alve_description/models/orange_box/materials/textures/orange.png</init_from>
+      <init_from>../materials/textures/orange.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

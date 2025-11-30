@@ -120,6 +120,7 @@ def generate_launch_description():
     
     delayed_start = TimerAction(
         period=15.0,
+        #period=40.0, minimize this value (computer performance HIGH) or maximize it (computer performance LOW)
         actions=[start_joint_state_broadcaster_cmd]
     )
 
