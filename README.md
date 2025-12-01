@@ -4,6 +4,13 @@
 
 This repository features **Alve-Robot**, a **fully simulated industrial automation system** designed to execute complex **pick-and-place** tasks within a modeled warehouse environment.
 
+The robot **detects and delivers** three types of boxes (Orange, Pizza, Donut) by:
+
+1.  Identifying the box type.
+2.  Selecting a specific colored guide line to follow.
+3.  Delivering the box to its corresponding conveyor belt.
+4.  Returning to its origin using a blob-tracking homing system.
+
 This project serves as the **Capstone Project** for the Industrial Computer Engineer degree at **The National School of Electronics and Telecommunications of Sfax (ENET'Com)**.<a href="https://enetcom.rnu.tn/en" target="_blank">
   <img src="https://scontent.ftun8-1.fna.fbcdn.net/v/t39.30808-6/339283204_136362622577918_8503007294318372148_n.png?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Ft4DL_NdQtEQ7kNvwHWIPWI&_nc_oc=Adk9O6eSOHMqRlS_gpF5olgxRQvI5wdpRsKos-tUlWz1accbEv0C7UKU3zV6YBR37o4&_nc_zt=23&_nc_ht=scontent.ftun8-1.fna&_nc_gid=NCxeL9Y9LpZUwZ8GENabkg&oh=00_Afg-Q6Zq6LZbnqBJGTJMtSnZX6JU5RXKW-r6GPt60zxnwg&oe=6933C594" alt="ENET'Com Website" height="35" style="vertical-align: middle; margin-left: 5px;">
 </a>
