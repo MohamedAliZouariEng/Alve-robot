@@ -144,7 +144,7 @@ ros2 launch alve_config alve_demo.launch.py
 # Project Demonstration
 
 <p align="center">
-  <a href="https://vimeo.com/user/242059085/folder/27480041?fl=tl&fe=cc" target="_blank">
+  <a href="https://vimeo.com/user242059085" target="_blank">
     <img src="https://img.shields.io/badge/🎬_Watch_Full_Demo_on_Vimeo-00a2ff?style=for-the-badge&logo=vimeo&logoColor=white&labelColor=0088cc" alt="Watch Demo on Vimeo" style="border-radius: 50px;">
   </a>
 </p>
