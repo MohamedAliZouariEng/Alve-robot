@@ -55,8 +55,9 @@ The following packages are essential for the project and must be installed via y
 | **`ros2_control` & `controllers`** | `sudo apt install ros-jazzy-ros2-control ros-jazzy-ros2-controllers` | [Official GitHub](https://github.com/ros-controls/ros2_control/tree/jazzy) |
 | **`gz_ros2_control`** | `sudo apt install ros-jazzy-gz-ros2-control` | [Official GitHub](https://github.com/ros-controls/gz_ros2_control/tree/jazzy) |
 | **MoveIt 2** | `sudo apt install ros-jazzy-moveit` | [Official Install Guide](https://moveit.ai/install-moveit2/binary/) |
-| **Grasping Messages** | `sudo apt install ros-jazzy-grasping-msgs` | N/A |
+| **Grasping Messages** | `sudo apt install ros-jazzy-grasping-msgs` | [Official GitHub](https://github.com/mikeferguson/grasping_msgs)  |
 | **PCL ROS** | `sudo apt install ros-jazzy-pcl-ros` | [Official GitHub](https://github.com/ros-perception/perception_pcl/tree/jazzy) |
+| **TRAC-IK Kinematics Solver** | Already in this repository | [Bitbucket Repository](https://bitbucket.org/traclabs/trac_ik/src/jazzy/) |
 
 ### 3\. Clone and Setup Workspace
 
