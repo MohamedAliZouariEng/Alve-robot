@@ -162,7 +162,7 @@ ros2 launch alve_config alve_demo.launch.py
 Thank you for your interest in the Alve-Robot project. To explore my other work in robotics and industrial automation, you can connect with me on these professional platforms.
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/mohamed-ali-zouari-677452397/" target="_blank">
+  <a href="https://www.linkedin.com/in/mohamed-ali-zouari-eng/" target="_blank">
     <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white&label=Connect%20on%20LinkedIn" alt="LinkedIn" height="35" style="margin: 0 10px;">
   </a>
   <a href="https://vimeo.com/user242059085" target="_blank">
